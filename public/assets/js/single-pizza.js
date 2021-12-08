@@ -124,8 +124,8 @@ function handleNewReplySubmit(event) {
 
   const formData = { writtenBy, replyBody };
 
-  fetch(`/api/comments/${pizzaId}`, {
-    method: 'POST',
+  fetch(`/api/comments/${pizzaId}/${commentId}`, {
+    method: 'PUT',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json'
@@ -147,7 +147,7 @@ function handleNewReplySubmit(event) {
     });
 }
 
-$backBtn.addEventListener('click', function () {
+$backBtn.addEventListener('click', function() {
   window.history.back();
 });
 
